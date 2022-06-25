@@ -29,9 +29,9 @@ const Hero = () => (
         }
         description="The easiest way to build a React landing page in seconds."
         button={
-          <Link href="https://creativedesignsguru.com/category/nextjs/">
+          <Link href="https://discord.com/api/oauth2/authorize?client_id=967138080375046214&permissions=265280&scope=bot%20applications.commands">
             <a>
-              <Button xl>Download Your Free Theme</Button>
+              <Button xl>Put ajos in your discord</Button>
             </a>
           </Link>
         }
