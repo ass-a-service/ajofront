@@ -1,92 +1,41 @@
-# Landing Page Template built with Next JS 12+, Tailwind CSS 3 and TypeScript [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
+# Ajobot Site
 
-<p align="center">
-  <a href="https://creativedesignsguru.com/demo/nextjs-landing-page/"><img src="public/assets/images/nextjs-landing-page-banner.png?raw=true" alt="Next js starter banner"></a>
-</p>
+Built with Next JS 12+, Tailwind CSS 3 and TypeScript
 
-🚀 Landing Page theme written in Next.js, Tailwind CSS and TypeScript ⚡️ Made with developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, VSCode, Netlify, PostCSS, Tailwind CSS.
+Based on [Next-JS-Landing-Page-Starter-Template](https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template) by [Ixartz](https://github.com/ixartz)
 
-Clone this project and use it to create your own [Next.js](https://nextjs.org) project. You can check a [Next js templates demo](https://creativedesignsguru.com/demo/nextjs-landing-page/).
+## Dev version
 
-### DEMO
+<https://ajofront.pages.dev/>
 
-[![Nextjs Landing Page Template Screenshot](public/assets/images/nextjs-landing-page-screenshot.png?raw=true)](https://creativedesignsguru.com/demo/nextjs-landing-page/)
-
-Check out our [live demo](https://creativedesignsguru.com/demo/nextjs-landing-page/).
-
-### Features
+## Features
 
 Developer experience first:
 
-- 🔥 [Next.js](https://nextjs.org) for Static Site Generator
-- 🎨 Integrate with [Tailwind CSS](https://tailwindcss.com)
-- 💅 PostCSS for processing Tailwind CSS and integrated to `styled-jsx`
-- 🎉 Type checking [TypeScript](https://www.typescriptlang.org)
-- ✅ Strict Mode for TypeScript and React 17
-- ✏️ Linter with [ESLint](https://eslint.org) (default NextJS, NextJS Core Web Vitals and Airbnb configuration)
-- 🛠 Code Formatter with [Prettier](https://prettier.io)
-- 🦊 Husky for Git Hooks
-- 🚫 Lint-staged for running linters on Git staged files
-- 🗂 VSCode configuration: Debug, Settings, Tasks and extension for PostCSS, ESLint, Prettier, TypeScript
-- 🤖 SEO metadata, JSON-LD and Open Graph tags with Next SEO
-- ⚙️ [Bundler Analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
-- 🖱️ One click deployment with Vercel or Netlify (or manual deployment to any hosting services)
-- 🌈 Include a FREE theme
-- 💯 Maximize lighthouse score
+- Landing
+- Leaderboard
 
-Built-in feature from Next.js:
+## Philosophy
 
-- ☕ Minify HTML & CSS
-- 💨 Live reload
-- ✅ Cache busting
+- More ajos
 
-### Included Components
+## Requirements
 
-- Navbar
-- Hero
-- Features
-- CTA banner
-- Footer
+- Node.js 16 and npm
 
-Find more components in our [premium NextJS themes](https://creativedesignsguru.com/category/nextjs/).
-
-### Philosophy
-
-- Minimal code
-- SEO-friendly
-- 🚀 Production-ready
-
-### Nextless.js SaaS Boilerplate
-
-Build your SaaS product faster with [React SaaS Boilerplate](https://nextlessjs.com).
-
-[![React SaaS Boilerplate Next.js](https://creativedesignsguru.com/assets/images/themes/next-js-saas-starter-kit.jpg)](https://nextlessjs.com)
-
-### Premium Themes
-
-| [Green Nextjs Landing Page Template](https://creativedesignsguru.com/landing-green-modern-nextjs-theme/) | [Purple Saas Nextjs Theme](https://creativedesignsguru.com/landing-purple-modern-react-theme/) |
-| --- | --- |
-| [![Green Nextjs Landing Page Template](https://creativedesignsguru.com/assets/images/themes/landing-green-modern-nextjs-theme-xs.png)](https://creativedesignsguru.com/landing-green-modern-nextjs-theme/) | [![Blue Landing Page Nextjs Theme](https://creativedesignsguru.com/assets/images/themes/landing-blue-modern-nextjs-theme-xs.png)](https://creativedesignsguru.com/landing-blue-modern-react-theme/) |
-
-Find more [Nextjs Templates](https://creativedesignsguru.com/category/nextjs/).
-
-### Requirements
-
-- Node.js and npm
-
-### Getting started
+## Getting started
 
 Run the following command on your local environment:
 
-```
-git clone --depth=1 https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template.git my-project-name
-cd my-project-name
+```sh
+git clone <repo clone url>
+cd ajofront
 npm install
 ```
 
 Then, you can run locally in development mode with live reload:
 
-```
+```sh
 npm run dev
 ```
 
@@ -181,9 +130,3 @@ Everyone is welcome to contribute to this project. Feel free to open an issue if
 Licensed under the MIT License, Copyright © 2022
 
 See [LICENSE](LICENSE) for more information.
-
----
-
-Made with ♥ by [CreativeDesignsGuru](https://creativedesignsguru.com) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
-
-[![Sponsor Next JS Boilerplate](https://cdn.buymeacoffee.com/buttons/default-red.png)](https://www.buymeacoffee.com/ixartz)

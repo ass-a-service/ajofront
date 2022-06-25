@@ -8,9 +8,9 @@ const Banner = () => (
   <Section>
     <CTABanner
       title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-      subtitle="Start your Free Trial."
+      subtitle="Launch your own ajobot."
       button={
-        <Link href="https://creativedesignsguru.com/category/nextjs/">
+        <Link href="https://github.com/ass-a-service/ajobot">
           <a>
             <Button>Get Started</Button>
           </a>
