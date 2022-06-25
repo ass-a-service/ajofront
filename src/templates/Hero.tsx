@@ -4,24 +4,11 @@ import { Background } from '../background/Background';
 import { Button } from '../button/Button';
 import { HeroOneButton } from '../hero/HeroOneButton';
 import { Section } from '../layout/Section';
-import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
-import { Logo } from './Logo';
+import { Header } from './Header';
 
 const Hero = () => (
   <Background color="bg-gray-100">
-    <Section yPadding="py-6">
-      <NavbarTwoColumns logo={<Logo xl />}>
-        <li>
-          <Link href="https://github.com/ass-a-service/ajobot">
-            <a>GitHub</a>
-          </Link>
-        </li>
-        <Link href="https://github.com/ass-a-service/ajobot/wiki">
-          <a>Docs</a>
-        </Link>
-      </NavbarTwoColumns>
-    </Section>
-
+    <Header />
     <Section yPadding="pt-20 pb-32">
       <HeroOneButton
         title={

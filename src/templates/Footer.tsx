@@ -86,11 +86,11 @@ const Footer = () => (
           </Link>
         </li>
         <li>
-          <Link href="https://github.com/ass-a-service/ajobot">
-            <a>GitHub</a>
-          </Link>
           <Link href="https://github.com/ass-a-service/ajobot/wiki">
             <a>Docs</a>
+          </Link>
+          <Link href="https://github.com/ass-a-service/ajobot">
+            <a>GitHub</a>
           </Link>
         </li>
       </CenteredFooter>
