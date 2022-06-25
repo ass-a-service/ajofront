@@ -26,11 +26,11 @@ const Hero = () => (
       <HeroOneButton
         title={
           <>
-            {'The modern landing page for\n'}
-            <span className="text-primary-500">React developers</span>
+            {'Farm ajos by spamming :garlic:\n'}
+            <span className="text-primary-500">Beware of the VAMPIRE</span>
           </>
         }
-        description="The easiest way to build a React landing page in seconds."
+        description="The most exciting game since El Mongo"
         button={
           <Link href="https://discord.com/api/oauth2/authorize?client_id=967138080375046214&permissions=265280&scope=bot%20applications.commands">
             <a>
