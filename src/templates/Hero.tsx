@@ -16,6 +16,9 @@ const Hero = () => (
             <a>GitHub</a>
           </Link>
         </li>
+        <Link href="https://github.com/ass-a-service/ajobot/wiki">
+          <a>Docs</a>
+        </Link>
       </NavbarTwoColumns>
     </Section>
 
