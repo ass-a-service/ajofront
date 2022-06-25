@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import { Background } from '../background/Background';
 import { Button } from '../button/Button';
 import { HeroOneButton } from '../hero/HeroOneButton';
@@ -19,11 +17,13 @@ const Hero = () => (
         }
         description="The most exciting game since El Mongo"
         button={
-          <Link href="https://discord.com/api/oauth2/authorize?client_id=967138080375046214&permissions=265280&scope=bot%20applications.commands">
-            <a>
-              <Button xl>Put ajos in your discord</Button>
-            </a>
-          </Link>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://discord.com/api/oauth2/authorize?client_id=967138080375046214&permissions=265280&scope=bot%20applications.commands"
+          >
+            <Button xl>Put ajos in your discord</Button>
+          </a>
         }
       />
     </Section>
