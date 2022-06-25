@@ -1,6 +1,3 @@
-import Image from 'next/image';
-
-import ajologo from '../../public/assets/images/ajologo.png';
 import { AppConfig } from '../utils/AppConfig';
 
 type ILogoProps = {
@@ -14,8 +11,8 @@ const Logo = (props: ILogoProps) => {
 
   return (
     <span className={`text-gray-900 inline-flex items-center ${fontStyle}`}>
-      <Image
-        src={ajologo}
+      <img
+        src="/assets/images/ajologo.png"
         width="100px"
         height="100px"
         alt="{AppConfig.site_name} logo (Billy is sus)"
