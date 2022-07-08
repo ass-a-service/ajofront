@@ -1,28 +1,34 @@
 import { Background } from '../background/Background';
 import { Button } from '../button/Button';
 import { HeroOneButton } from '../hero/HeroOneButton';
+import { Icon } from '../icon/Icon';
 import { Section } from '../layout/Section';
 import { Header } from './Header';
 
 const Hero = () => (
-  <Background color="bg-gray-100">
+  <Background color="" bgImage="ajo1.webp">
     <Header />
     <Section yPadding="pt-20 pb-32">
       <HeroOneButton
-        title={
+        title={<>{'Farm ajos by spamming :garlic:'}</>}
+        description={
           <>
-            {'Farm ajos by spamming :garlic:\n'}
-            <span className="text-primary-500">Beware of the VAMPIRE</span>
+            {'Beware of the Vampire'}
+            <Icon icon="bat"></Icon>
           </>
         }
-        description="The most exciting game since El Mongo"
         button={
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://discord.com/api/oauth2/authorize?client_id=967138080375046214&permissions=265280&scope=bot%20applications.commands"
           >
-            <Button xl>Put ajos in your discord</Button>
+            <Button xl>
+              Put
+              <Icon icon="garlic"></Icon>
+              in your
+              <Icon icon="discord"></Icon>
+            </Button>
           </a>
         }
       />

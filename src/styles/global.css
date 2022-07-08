@@ -3,3 +3,236 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+* {
+  transition: .15s;
+}
+
+/* VARIABLES */
+/* gold theme */
+.theme-wrapper.gold {
+  --primary-color: #cca744;
+  --primary-color-100: #ebffff;
+  --primary-color-200: #e4d172;
+  --primary-color-300: #d7c064;
+  --primary-color-400: #c2a350;
+  --primary-color-500: #cca744;
+  --primary-color-600: #b08b26;
+  --primary-color-700: #836410;
+  --primary-color-800: #663f09;
+  --primary-color-900: #330903;
+
+  --border-top-color: rgba(255, 206, 206, 0.63);
+  --border-bottom-color: rgba(39, 4, 4, 0.637);
+
+  --bg-color-100: white;
+  --bg-color-200: white;
+  --bg-color-300: white;
+  --bg-color-400: white;
+  --bg-color-500: white;
+  --bg-color-600: white;
+  --bg-color-700: white;
+  --bg-color-800: rgb(10, 1, 1);
+  --bg-color-900: rgb(37, 19, 11);
+}
+/* gems */
+.gem {
+  --gem-size : 30px;
+  --glare : rgba(255,255,255,.5);
+  --glow-color: rgba(155,155,175,.5);
+  --accent-color-000 : white;
+  --accent-color-100 : rgb(200,200,200);
+  --accent-color-200 : rgba(155, 155, 205,.95);
+  --accent-color-500 : gray;
+  --accent-color-900 : rgb(75,75,75);
+  background:
+    linear-gradient(110deg, 
+      transparent 0 50%,
+      var(--glare) 51% 65%,
+      transparent 66% 75%,
+      var(--glare) 76% 86%,
+      transparent 87% 100%
+    ),
+    linear-gradient(0deg,
+      var(--accent-color-100) 0 5%,
+      transparent 5% 65%,
+      var(--accent-color-900)
+    ),
+    linear-gradient(90deg,
+      var(--accent-color-900) 0,
+      transparent 25% 90%,
+      var(--accent-color-900) 90%
+    ), var(--accent-color-500);
+  width: var(--gem-size);
+  height: var(--gem-size);
+  transform: rotate(45deg);
+  display: inline-block;
+  border: calc(var(--gem-size)/5) solid;
+  border-top-color: var(--accent-color-000);
+  border-bottom-color: var(--accent-color-900);
+  border-left-color: var(--accent-color-200);
+  border-right-color: var(--accent-color-200);
+  box-shadow: 0 0 calc(var(--gem-size) - 5px) calc(var(--gem-size)/5) var(--glow-color);
+}
+
+.gem.small {
+  --gem-size :15px;
+}
+
+.gem.ruby {
+  --glow-color: rgba(255,0,0,.5);
+  --accent-color-000 : white;
+  --accent-color-100 : pink;
+  --accent-color-200 : rgba(190, 105, 155,.95);
+  --accent-color-500 : red;
+  --accent-color-900 : rgba(102, 26, 117, 0.75);
+}
+
+.gem.emerald {
+  --glow-color: rgba(0, 224, 131, 0.5);
+  --accent-color-000 : rgb(209, 255, 237);
+  --accent-color-100 : rgb(0, 255, 13);
+  --accent-color-200 : rgba(0, 199, 50, 0.95);
+  --accent-color-500 : rgb(0, 192, 150);
+  --accent-color-900 : rgba(0, 51, 66, 0.75);
+}
+
+.gem.topaz {
+  --glow-color: rgba(224, 63, 0, 0.5);
+  --accent-color-000 : rgb(255, 254, 209);
+  --accent-color-100 : rgb(229, 255, 0);
+  --accent-color-200 : rgba(255, 217, 0, 0.95);
+  --accent-color-500 : rgb(192, 141, 0);
+  --accent-color-900 : rgba(133, 0, 173, 0.75);
+}
+
+.gem.turquoise {
+  --glow-color: rgba(0, 179, 224, 0.5);
+  --accent-color-000 : rgb(209, 233, 255);
+  --accent-color-100 : rgb(0, 247, 255);
+  --accent-color-200 : rgba(0, 159, 199, 0.95);
+  --accent-color-500 : rgb(0, 138, 192);
+  --accent-color-900 : rgba(66, 48, 0, 0.75);
+}
+
+.theme-wrapper {
+  background: radial-gradient(var(--bg-color-900), var(--bg-color-800)) fixed;
+}
+
+/* hero */
+.heroBg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 200px) scale(2);
+  max-height: 100%;
+  width:auto;
+  opacity: .1;
+  mix-blend-mode: lighten;
+  filter: invert(100%);
+}
+
+/* Vertical Feature box */
+.vertical-feature.decorated {
+  position: relative;
+  z-index: 1;
+}
+.vertical-feature.decorated .content {
+  z-index: 1;
+  background: radial-gradient(var(--bg-color-900), var(--bg-color-800));
+}
+
+.vertical-feature.decorated::before {
+  width: calc(100% - 11px);
+  height: calc(100% - 20px);
+  position: absolute;
+  z-index: 0;
+  background: repeating-conic-gradient(from 0.19turn , 
+    var(--primary-color-100) 0deg,
+    var(--primary-color-200) ,
+    var(--primary-color-500) ,
+    var(--primary-color-800) ,
+    var(--primary-color-500) ,
+    var(--primary-color-200) ,
+    var(--primary-color-100) 45deg
+  );
+  display: block;
+  content:'';
+  top: 10px;
+  left: 5px;
+  border: 1px solid var(--primary-color-500);
+  box-shadow: 0 0 10px 3px rgba(0,0,0,.5);
+}
+
+.vertical-feature.decorated .decorated-frame {
+  position: absolute;
+  z-index: 2;
+  width:300px;
+  height: 300px;
+  background: url('/assets/images/structure/corners-brown.jpg');
+  mix-blend-mode: lighten;
+  background-position: top right;
+  background-size: 400%;
+}
+
+.vertical-feature.decorated  .decorated-frame.deco-0-0 {
+  background-position: -10px 0px;
+}
+.vertical-feature.decorated  .decorated-frame.deco-0-1 {
+  background-position: 310px -10px;
+}
+.vertical-feature.decorated  .decorated-frame.deco-0-2 {
+  background-position: 590px 0px;
+}
+.vertical-feature.decorated  .decorated-frame.deco-0-3 {
+  background-position: 905px -15px;
+}
+
+.vertical-feature.decorated  .decorated-frame.deco-1-0 {
+  background-position: -10px 280px;
+}
+.vertical-feature.decorated  .decorated-frame.deco-1-1 {
+  background-position: 300px -300px;
+}
+.vertical-feature.decorated  .decorated-frame.deco-1-2 {
+  background-position: 600px 300px;
+}
+.vertical-feature.decorated  .decorated-frame.deco-1-3 {
+  background-position: 905px -305px;
+}
+
+.vertical-feature.decorated  .decorated-frame.deco-2-0 {
+  background-position: -10px 600px;
+}
+.vertical-feature.decorated  .decorated-frame.deco-2-1 {
+  background-position: 300px -600px;
+}
+.vertical-feature.decorated  .decorated-frame.deco-2-2 {
+  background-position: 620px 600px;
+}
+.vertical-feature.decorated  .decorated-frame.deco-2-3 {
+  background-position: 885px -620px;
+}
+
+.vertical-feature.decorated  .decorated-frame.nw {
+  top: 0; right: 0;
+  transform: scale(0.5) translate(60%, -175px);
+}
+.vertical-feature.decorated  .decorated-frame.ne {
+  top: 0; left: 0;
+  transform: scale(-0.5, 0.5) translate(60%, -175px);
+}
+.vertical-feature.decorated  .decorated-frame.sw {
+  bottom: 0; right: 0;
+  transform: scale(0.5, -0.5) translate(60%, -175px);
+}
+.vertical-feature.decorated  .decorated-frame.se {
+  bottom: 0; left: 0;
+  transform: scale(-0.5, -0.5) translate(60%, -175px);
+}
+
+.vertical-feature img.grow {
+  object-fit: cover;
+}
