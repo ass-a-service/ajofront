@@ -10,12 +10,21 @@ export enum GemTheme {
   Turquoise,
 }
 
-const getGemThemeName = (theme: GemTheme | undefined) =>
+export enum GemSize {
+  md,
+  sm,
+  xs,
+}
+
+const getGemTheme = (theme: GemTheme | undefined) =>
   GemTheme[theme || 0]?.toLowerCase();
+
+const getGemSize = (size: GemSize | undefined) => GemSize[size || 0] || '';
 
 type IGemProps = {
   small?: boolean;
   theme: GemTheme | undefined;
+  size?: GemSize | undefined;
   margin?: string;
 };
 
@@ -23,10 +32,8 @@ const Gem = (props: IGemProps) => {
   const gemClass = className(
     'gem',
     props.margin || 'm-3',
-    getGemThemeName(props.theme),
-    {
-      small: props.small,
-    }
+    getGemTheme(props.theme),
+    getGemSize(props.size)
   );
   return <div className={gemClass}></div>;
 };

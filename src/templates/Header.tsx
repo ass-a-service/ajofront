@@ -4,8 +4,12 @@ import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
 
-const Header = () => (
-  <Section yPadding="py-6">
+type IHeaderProps = {
+  sticky?: boolean;
+};
+
+const Header = (props: IHeaderProps) => (
+  <Section sectionClass={`header ${props.sticky ? 'sticky' : ''}`}>
     <NavbarTwoColumns logo={<Logo xl />}>
       <li>
         <Link href="/leaderboard">

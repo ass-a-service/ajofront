@@ -20,6 +20,7 @@ const VerticalFeatures = () => (
       imageAlt="Watch out for you lower back!"
       gemTheme={GemTheme.Emerald}
       decoratedVariant={[1, 1]}
+      reverse
     />
     <VerticalFeatureRow
       title="Collect. Craft. Survive."
@@ -29,7 +30,6 @@ const VerticalFeatures = () => (
        Combine the fruits of nature to create tools and weapons you'll need to grow and survive in this unforgiving world of adventure"
       image="/assets/images/features/craft.jpg"
       imageAlt="For all of you PvE Carebears"
-      reverse
       gemTheme={GemTheme.Topaz}
       decoratedVariant={[3, 2]}
     />
@@ -43,6 +43,7 @@ const VerticalFeatures = () => (
       imageAlt="Fuck them up!"
       gemTheme={GemTheme.Ruby}
       decoratedVariant={[0, 0]}
+      reverse
     />
     <VerticalFeatureRow
       title="Explore the unknown"
@@ -53,9 +54,9 @@ const VerticalFeatures = () => (
       the predators that lurk the darkness. Beware of the vampire!"
       image="/assets/images/features/explorer.jpg"
       imageAlt="Get rich or die trying!"
-      reverse
       gemTheme={GemTheme.Turquoise}
       decoratedVariant={[0, 2]}
+      margin="my-10"
     />
   </Section>
 );

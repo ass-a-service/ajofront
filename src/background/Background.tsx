@@ -1,23 +1,33 @@
 import { ReactNode } from 'react';
 
+import classNames from 'classnames';
+
 type IBackgroundProps = {
   children: ReactNode;
-  bgImage?: string;
-  color?: string;
+  image?: string;
+  video?: string;
 };
 
-const Background = (props: IBackgroundProps) => (
-  <div
-    className={`${props.color ? props.color : ''}`}
-    style={{ position: 'relative' }}
-  >
-    <img
-      className="heroBg"
-      src={`assets/images/${props.bgImage ? props.bgImage : ''}`}
-      alt="background image"
-    />
-    {props.children}
-  </div>
-);
+const Background = (props: IBackgroundProps) => {
+  const bgClass = classNames('with-bg');
+  return (
+    <div className={bgClass}>
+      {props.children}
+      {props.image && (
+        <img
+          className="overlay"
+          src={`assets/images/${props.image}`}
+          alt="background image"
+        />
+      )}
+      {props.video && (
+        <video muted autoPlay loop className="underlay">
+          <source src={`assets/video/${props.video}.webm`} type="video/webm" />
+          <source src={`assets/video/${props.video}.mp4`} type="video/mp4" />
+        </video>
+      )}
+    </div>
+  );
+};
 
 export { Background };

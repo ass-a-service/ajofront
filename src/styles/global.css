@@ -4,25 +4,37 @@
 
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');*/
+@font-face {
+  font-family: "Vendome";
+  src: url("/assets/fonts/Vendome-Reg.woff2") format("woff2");
+}
 
 * {
   transition: .15s;
 }
 
+body {
+  min-height: 100vh;
+  height: auto;
+  background: black;
+}
+
 /* VARIABLES */
 /* gold theme */
 .theme-wrapper.gold {
-  --primary-color: #cca744;
+  --primary-color    : #fac37f;
   --primary-color-100: #ebffff;
-  --primary-color-200: #e4d172;
-  --primary-color-300: #d7c064;
-  --primary-color-400: #c2a350;
-  --primary-color-500: #cca744;
-  --primary-color-600: #b08b26;
-  --primary-color-700: #836410;
-  --primary-color-800: #663f09;
-  --primary-color-900: #330903;
+  --primary-color-200: #f6e9ce;
+  --primary-color-300: #fcd58d;
+  --primary-color-400: #fad37f;
+  --primary-color-500: #f5be6c;
+  --primary-color-600: #ea985c;
+  --primary-color-700: #c87348;
+  --primary-color-800: #774830;
+  --primary-color-900: #5c3e2b;
+
+  --complimentary-color-900: rgb(18, 7, 59);
 
   --border-top-color: rgba(255, 206, 206, 0.63);
   --border-bottom-color: rgba(39, 4, 4, 0.637);
@@ -36,7 +48,34 @@
   --bg-color-700: white;
   --bg-color-800: rgb(10, 1, 1);
   --bg-color-900: rgb(37, 19, 11);
+
+  --metallic-gradient: 
+  var(--primary-color-300),
+  var(--primary-color-200) 15%,
+  var(--primary-color-100) 50%, 52%,
+  var(--primary-color-200) 52%,
+  var(--primary-color-800) 55%,
+  var(--primary-color-700),
+  var(--primary-color-600),
+  var(--primary-color-500),
+  var(--primary-color-400),
+  var(--primary-color-300),
+  var(--primary-color-200);
+
+  /* font size trick for gradient texts */
+  --font-size : 64px;
+
+  /* sizes */ 
+  --header-height: 70px;
 }
+/* font sizes */
+.text-6xl {
+  --font-size: 64px;
+}
+.text-3xl {
+  --font-size: 2.5rem;
+}
+
 /* gems */
 .gem {
   --gem-size : 30px;
@@ -48,22 +87,23 @@
   --accent-color-500 : gray;
   --accent-color-900 : rgb(75,75,75);
   background:
+    linear-gradient(0deg,
+      var(--accent-color-100) 0 5%,
+      transparent 5% 55%,
+      var(--accent-color-900) 90%,
+      var(--accent-color-900) 90%
+    ),
+    linear-gradient(90deg,
+      var(--accent-color-900) 0 5%,
+      transparent 10% 90%,
+      var(--accent-color-900) 95%
+    ),
     linear-gradient(110deg, 
       transparent 0 50%,
       var(--glare) 51% 65%,
       transparent 66% 75%,
       var(--glare) 76% 86%,
       transparent 87% 100%
-    ),
-    linear-gradient(0deg,
-      var(--accent-color-100) 0 5%,
-      transparent 5% 65%,
-      var(--accent-color-900)
-    ),
-    linear-gradient(90deg,
-      var(--accent-color-900) 0,
-      transparent 25% 90%,
-      var(--accent-color-900) 90%
     ), var(--accent-color-500);
   width: var(--gem-size);
   height: var(--gem-size);
@@ -75,41 +115,81 @@
   border-left-color: var(--accent-color-200);
   border-right-color: var(--accent-color-200);
   box-shadow: 0 0 calc(var(--gem-size) - 5px) calc(var(--gem-size)/5) var(--glow-color);
+  position: relative;
+}
+.gem::before {
+  content: '';
+  display: block;
+  width: calc(var(--gem-size) - 8px);
+  height: 5px;
+  background: var(--glow-color-plus);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  box-shadow: 0 0 5px 2px var(--glow-color-plus);
+  transform: translate(-2px, -5px);
+  opacity: .75;
+  mix-blend-mode: lighten;
 }
 
-.gem.small {
+.gem.sm {
   --gem-size :15px;
+}
+.gem.sm:before {
+  transform: translate(1px, -4px);
+}
+
+.gem.xs {
+  --gem-size :10px;
+  border-width:1px;
+  background: conic-gradient(
+    var(--accent-color-000) 0 45deg,
+    var(--accent-color-200) 45deg, 90deg,
+    var(--accent-color-200) 90deg, 135deg,
+    var(--accent-color-900) 135deg 235deg,
+    var(--accent-color-200) 235deg 315deg,
+    var(--accent-color-000) 315deg 360deg
+  );
+  box-shadow: 0 0 10px 3px var(--glow-color);
+}
+.gem.xs:before {
+  transform: translate(3px, -3px);
 }
 
 .gem.ruby {
   --glow-color: rgba(255,0,0,.5);
+  --glow-color-plus: rgb(255, 169, 169);
   --accent-color-000 : white;
   --accent-color-100 : pink;
-  --accent-color-200 : rgba(190, 105, 155,.95);
+  --accent-color-200 : rgba(172, 3, 26, 0.95);
   --accent-color-500 : red;
-  --accent-color-900 : rgba(102, 26, 117, 0.75);
+  --accent-color-900 : rgba(98, 0, 117, 0.75);
 }
 
 .gem.emerald {
   --glow-color: rgba(0, 224, 131, 0.5);
-  --accent-color-000 : rgb(209, 255, 237);
-  --accent-color-100 : rgb(0, 255, 13);
-  --accent-color-200 : rgba(0, 199, 50, 0.95);
-  --accent-color-500 : rgb(0, 192, 150);
-  --accent-color-900 : rgba(0, 51, 66, 0.75);
+  --glow-color-plus: rgb(0 227 255);
+  --accent-color-000: rgb(230, 253, 244);
+  --accent-color-100: rgb(0, 255, 13);
+  --accent-color-200: rgba(0, 199, 50, 0.95);
+  --accent-color-500: rgb(0, 192, 150);
+  --accent-color-900: rgba(0, 51, 66, .75);
 }
 
 .gem.topaz {
   --glow-color: rgba(224, 63, 0, 0.5);
-  --accent-color-000 : rgb(255, 254, 209);
-  --accent-color-100 : rgb(229, 255, 0);
-  --accent-color-200 : rgba(255, 217, 0, 0.95);
-  --accent-color-500 : rgb(192, 141, 0);
-  --accent-color-900 : rgba(133, 0, 173, 0.75);
+  --glow-color-plus: rgb(239 255 165);
+  --accent-color-000: rgb(255 250 32);
+  --accent-color-100: rgb(229, 255, 0);
+  --accent-color-200: rgb(255 165 0 / 95%);
+  --accent-color-500: rgb(201 103 78);
+  --accent-color-900: rgb(109 0 141 / 39%);
 }
 
 .gem.turquoise {
   --glow-color: rgba(0, 179, 224, 0.5);
+  --glow-color-plus: rgb(123, 255, 226);
   --accent-color-000 : rgb(209, 233, 255);
   --accent-color-100 : rgb(0, 247, 255);
   --accent-color-200 : rgba(0, 159, 199, 0.95);
@@ -121,18 +201,117 @@
   background: radial-gradient(var(--bg-color-900), var(--bg-color-800)) fixed;
 }
 
-/* hero */
-.heroBg {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 200px) scale(2);
-  max-height: 100%;
-  width:auto;
-  opacity: .1;
-  mix-blend-mode: lighten;
-  filter: invert(100%);
+.header {
+  width: 100%;
+  padding: 7px 15px;
+  background: linear-gradient(180deg, var(--complimentary-color-900) 0%, transparent 75%);
 }
+
+.header.sticky {
+  padding: 7px 80px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+/* hero Background */
+.with-bg {
+  position: relative;
+  height: 100vh; 
+  margin-top: calc(0px - var(--header-height));
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  place-items: center;
+  place-content: center;
+}
+
+.with-bg .hero {
+  flex-grow: 1;
+  z-index: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  place-items: center;
+  place-content: center;
+}
+
+.with-bg .overlay,
+.with-bg .underlay {
+  position: absolute;
+  height: 100%;
+  width:100%;
+  object-fit: cover;
+}
+
+.with-bg .overlay {
+  z-index: 0;
+  pointer-events: none;
+  filter: contrast(.5) invert(1) grayscale(1);
+  mix-blend-mode: color-dodge;
+}
+.with-bg img.overlay {
+  object-fit: cover;
+  width:100%;
+}
+
+.with-bg .underlay {
+  z-index: -1;
+}
+
+.navbar-complement {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(0deg,
+    transparent 0px,
+    var(--primary-color-300) 0px,
+    var(--primary-color-600),
+    var(--primary-color-100) 0px 1px,
+    var(--primary-color-800),
+    var(--primary-color-600),
+    var(--primary-color-400),
+    var(--primary-color-200) calc(0% + 8px),
+    var(--complimentary-color-900) 8px 
+  );
+  height: var(--header-height);
+  width: calc(100% - var(--header-height)*2);
+  margin-left: var(--header-height); 
+  margin-right: var(--header-height); 
+  z-index:2;
+  box-shadow: 0 0 10px 2px rgba(0,0,0,.25);
+}
+.navbar-complement::before,
+.navbar-complement::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  height: var(--header-height);
+  width:var(--header-height);
+  background: linear-gradient(45deg,
+    transparent 50%, 
+    rgba(0,0,0,.5) calc(50% - 20px),
+    var(--primary-color-300) calc(50% - 25px),
+    var(--primary-color-600),
+    var(--primary-color-100),
+    var(--primary-color-800),
+    var(--primary-color-600),
+    var(--primary-color-400),
+    var(--primary-color-200) calc(50% + 6px),
+    var(--complimentary-color-900) calc(50% + 6px)
+  );
+  z-index: 1;
+  opacity:1;
+}
+.navbar-complement::before {
+  left:0;
+  transform: translateX(-100%);
+}
+.navbar-complement::after {
+  right:0;
+  transform: translateX(100%) scaleX(-1);
+}
+
 
 /* Vertical Feature box */
 .vertical-feature.decorated {
@@ -140,6 +319,7 @@
   z-index: 1;
 }
 .vertical-feature.decorated .content {
+  position: relative;
   z-index: 1;
   background: radial-gradient(var(--bg-color-900), var(--bg-color-800));
 }
@@ -235,4 +415,57 @@
 
 .vertical-feature img.grow {
   object-fit: cover;
+}
+
+.deco-gradient-pad {
+  padding: 15px 45px;
+  line-height: 1;
+  color: var(--primary-color-100);
+  background: linear-gradient(90deg, transparent 0, var(--bg-color-900) 35% 65%, transparent);
+  display: inline-block;
+}
+
+.deco-gradient-top,
+.deco-gradient-bottom,
+.deco-gradient-pad {
+  position:relative;
+}
+
+.deco-gradient-top:before,
+.deco-gradient-bottom:before,
+.deco-gradient-pad::before,
+.deco-gradient-pad::after {
+  content: '';
+  position: absolute;
+  left:0;
+  height: 1px;
+  width:100%;
+  background: linear-gradient(90deg, 
+    transparent 0,
+    var(--primary-color-600),
+    var(--primary-color-400),
+    var(--primary-color-200) 45% 47%,
+    var(--primary-color-100) 47% 52%,
+    var(--primary-color-200) 52% 54%,
+    var(--primary-color-400),
+    var(--primary-color-600),
+    transparent
+  );
+}
+.deco-gradient-top::before,
+.deco-gradient-pad::before {
+  top: 0;
+}
+.deco-gradient-bottom::before,
+.deco-gradient-pad::after {
+  bottom: 0;
+}
+
+.deco-gradient-text {
+  background: radial-gradient(ellipse 1500px var(--font-size) at top,
+    var(--metallic-gradient)
+  );
+  background-clip: text;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,1));
+  -webkit-text-fill-color: transparent;
 }

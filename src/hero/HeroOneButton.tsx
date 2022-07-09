@@ -13,7 +13,7 @@ const HeroOneButton = (props: IHeroOneButtonProps) => (
       ${props.bg ? props.bg : ''}
     `}
   >
-    <h1 className="text-5xl text-gold-200 whitespace-pre-line leading-hero font-serif uppercase">
+    <h1 className="text-6xl text-gold-200 whitespace-pre-line leading-hero font-serif uppercase">
       {props.title}
     </h1>
     <div className="text-2xl mt-4 mb-16 text-gold-700 font-serif uppercase">

@@ -1,7 +1,7 @@
 import className from 'classnames';
 import { useRouter } from 'next/router';
 
-import { Gem, GemTheme } from '../gem/Gem';
+import { Gem, GemTheme, GemSize } from '../gem/Gem';
 import { Icon } from '../icon/Icon';
 
 type VariantX = 0 | 1 | 2 | 3;
@@ -25,11 +25,9 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
   const verticalFeatureClass = className(
     props.margin ? props.margin : 'mt-10',
     'flex',
-    'rounded',
     'vertical-feature',
-    {
-      'flex-row-reverse': props.reverse,
-    },
+    'max-w-screen-lg',
+    'mx-auto',
     { decorated: props.decoratedVariant }
   );
 
@@ -41,14 +39,6 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
     props.decoratedVariant ? getVariantClass(props.decoratedVariant) : ''
   );
   const router = useRouter();
-  /*
- 
-<div className={`decorated-frame nw ${decorativeClass}`}></div>
-          <div className={`decorated-frame ne ${decorativeClass}`}></div>
-          <div className={`decorated-frame sw ${decorativeClass}`}></div>
-          <div className={`decorated-frame se ${decorativeClass}`}></div>
-
- */
   return (
     <div className={verticalFeatureClass}>
       {props.decoratedVariant && (
@@ -59,20 +49,23 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
           <div className={`decorated-frame se ${decorativeClass}`}></div>
         </>
       )}
-      <div className="content mx-2 my-3 flex flex-wrap items-stretch">
-        <div className="w-full sm:w-1/2 text-center p-6">
-          <h3 className="text-3xl text-gold-200 font-serif uppercase">
+      <div
+        className={`content mx-2 my-3 flex flex-wrap items-stretch 
+    ${props.reverse ? 'flex-row-reverse' : ''}`}
+      >
+        <div className="w-full sm:w-1/2 text-center p-7">
+          <h3 className="text-3xl text-gold-400 font-serif uppercase">
             {props.title}
           </h3>
           {props.subtitle && (
-            <h4 className="w-full text-xl text-gold-700 font-serif uppercase">
+            <h4 className="w-full text-xl text-primary-100 font-serif uppercase deco-gradient-top">
               {props.subtitle}
             </h4>
           )}
           <div className="w-full flex justify-center items-center">
-            <Gem small theme={props.gemTheme}></Gem>
+            <Gem size={GemSize.sm} theme={props.gemTheme}></Gem>
             <Gem theme={props.gemTheme}></Gem>
-            <Gem small theme={props.gemTheme}></Gem>
+            <Gem size={GemSize.sm} theme={props.gemTheme}></Gem>
           </div>
           <div className="mt-6 text-xl leading-9">{props.description}</div>
           <div className="mt-6">

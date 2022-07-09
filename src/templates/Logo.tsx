@@ -5,16 +5,16 @@ type ILogoProps = {
 };
 
 const Logo = (props: ILogoProps) => {
-  const fontStyle = props.xl
-    ? 'font-semibold text-3xl'
-    : 'font-semibold text-xl';
+  const fontStyle = props.xl ? 'text-3xl' : 'text-xl';
 
   return (
-    <span className={`text-gray-900 inline-flex items-center ${fontStyle}`}>
+    <span
+      className={`text-primary-200 font-serif uppercase deco-gradient-text inline-flex items-center ${fontStyle}`}
+    >
       <img
         src="/assets/images/ajologo.png"
-        width="100px"
-        height="100px"
+        width="50px"
+        height="50px"
         alt="{AppConfig.site_name} logo (Billy is sus)"
       />
       {AppConfig.site_name}
