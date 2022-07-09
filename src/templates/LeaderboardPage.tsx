@@ -1,3 +1,5 @@
+import className from 'classnames';
+
 import { Meta } from '../layout/Meta';
 import { LeaderboardTable } from '../leaderboard/LeaderboardTable';
 import { Leader } from '../types';
@@ -5,7 +7,10 @@ import { AppConfig } from '../utils/AppConfig';
 import { Footer } from './Footer';
 import { Header } from './Header';
 
-const LeaderboardPage = () => {
+type LeaderboardProps = {
+  theme: string;
+};
+const LeaderboardPage = (props: LeaderboardProps) => {
   const table: Leader[] = [
     {
       name: 'Benmaster',
@@ -13,8 +18,18 @@ const LeaderboardPage = () => {
       ajos: 9000000,
     },
   ];
+  const baseClass = className(
+    'antialiased',
+    'text-gray-600',
+    'theme-wrapper',
+    props.theme
+  );
+  const baseStyle = {
+    position: 'relative',
+  } as React.CSSProperties;
+
   return (
-    <div className="antialiased text-gray-600">
+    <div className={baseClass} style={baseStyle}>
       <Meta title={AppConfig.title} description={AppConfig.description} />
       <Header />
       <LeaderboardTable table={table} />
