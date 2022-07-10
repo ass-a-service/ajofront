@@ -18,7 +18,7 @@ const VerticalFeatures = () => (
        of skill combinations and perks that suit to your own unique personal playstyle!"
       image="/assets/images/features/farm.jpg"
       imageAlt="Watch out for you lower back!"
-      gemTheme={GemTheme.Emerald}
+      gemTheme={GemTheme.emerald}
       decoratedVariant={[1, 1]}
       reverse
     />
@@ -30,7 +30,7 @@ const VerticalFeatures = () => (
        Combine the fruits of nature to create tools and weapons you'll need to grow and survive in this unforgiving world of adventure"
       image="/assets/images/features/craft.jpg"
       imageAlt="For all of you PvE Carebears"
-      gemTheme={GemTheme.Topaz}
+      gemTheme={GemTheme.topaz}
       decoratedVariant={[3, 2]}
     />
     <VerticalFeatureRow
@@ -41,7 +41,7 @@ const VerticalFeatures = () => (
        strongholds to steal their most precious possesions, or participate in the server-wide factional warfare where you protect your King!"
       image="/assets/images/features/pvp.jpg"
       imageAlt="Fuck them up!"
-      gemTheme={GemTheme.Ruby}
+      gemTheme={GemTheme.ruby}
       decoratedVariant={[0, 0]}
       reverse
     />
@@ -54,7 +54,7 @@ const VerticalFeatures = () => (
       the predators that lurk the darkness. Beware of the vampire!"
       image="/assets/images/features/explorer.jpg"
       imageAlt="Get rich or die trying!"
-      gemTheme={GemTheme.Turquoise}
+      gemTheme={GemTheme.turquoise}
       decoratedVariant={[0, 2]}
       margin="my-10"
     />

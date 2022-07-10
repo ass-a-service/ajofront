@@ -1,13 +1,13 @@
 import className from 'classnames';
 
 export enum GemTheme {
-  Ruby,
-  Sapphire,
-  Topaz,
-  Amethyst,
-  Diamond,
-  Emerald,
-  Turquoise,
+  ruby,
+  sapphire,
+  topaz,
+  amethyst,
+  diamond,
+  emerald,
+  turquoise,
 }
 
 export enum GemSize {
@@ -16,10 +16,13 @@ export enum GemSize {
   xs,
 }
 
-const getGemTheme = (theme: GemTheme | undefined) =>
-  GemTheme[theme || 0]?.toLowerCase();
+const getGemTheme = (theme: GemTheme | undefined) => GemTheme[theme || 0];
 
-const getGemSize = (size: GemSize | undefined) => GemSize[size || 0] || '';
+export default function getGemString(theme: GemTheme) {
+  return getGemTheme(theme);
+}
+
+const getGemSize = (size: GemSize | undefined) => GemSize[size || 0];
 
 type IGemProps = {
   small?: boolean;
@@ -38,4 +41,4 @@ const Gem = (props: IGemProps) => {
   return <div className={gemClass}></div>;
 };
 
-export { Gem };
+export { Gem, getGemString };
