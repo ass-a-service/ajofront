@@ -1,6 +1,9 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    fontFamily: {
+      serif: ['Vendome'],
+    },
     fontSize: {
       xs: '0.75rem',
       sm: '0.875rem',
@@ -16,15 +19,15 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          100: '#E6F6FE',
-          200: '#C0EAFC',
-          300: '#9ADDFB',
-          400: '#4FC3F7',
-          500: '#03A9F4',
-          600: '#0398DC',
-          700: '#026592',
-          800: '#014C6E',
-          900: '#013349',
+          100: '#ebffff',
+          200: '#f6e8ce',
+          300: '#fcce8d',
+          400: '#fac37f',
+          500: '#f5b06c',
+          600: '#ea985c',
+          700: '#c87348',
+          800: '#774830',
+          900: '#5c3e2b',
         },
         gray: {
           100: '#f7fafc',
@@ -36,6 +39,17 @@ module.exports = {
           700: '#4a5568',
           800: '#2d3748',
           900: '#1a202c',
+        },
+        gold: {
+          100: '#ebffff',
+          200: '#f6e9ce',
+          300: '#fcd58d',
+          400: '#fad37f',
+          500: '#f5be6c',
+          600: '#ea985c',
+          700: '#c87348',
+          800: '#774830',
+          900: '#5c3e2b',
         },
       },
       lineHeight: {

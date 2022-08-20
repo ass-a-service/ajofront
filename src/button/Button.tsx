@@ -1,17 +1,25 @@
+import { ReactNode } from 'react';
+
 import className from 'classnames';
+
+import { getGemString, GemTheme } from '../gem/Gem';
 
 type IButtonProps = {
   xl?: boolean;
-  children: string;
+  gem?: GemTheme;
+  children: ReactNode;
 };
 
 const Button = (props: IButtonProps) => {
-  const btnClass = className({
-    btn: true,
-    'btn-xl': props.xl,
-    'btn-base': !props.xl,
-    'btn-primary': true,
-  });
+  const btnClass = className(
+    {
+      btn: true,
+      'btn-xl': props.xl,
+      'btn-base': !props.xl,
+      'btn-primary': true,
+    },
+    props.gem ? `gem-btn ${getGemString(props.gem)}` : ''
+  );
 
   return (
     <div className={btnClass}>
