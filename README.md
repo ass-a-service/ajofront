@@ -4,6 +4,10 @@ Built with Next JS 12+, Tailwind CSS 3 and TypeScript
 
 Based on [Next-JS-Landing-Page-Starter-Template](https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template) by [Ixartz](https://github.com/ixartz)
 
+## Production version
+
+<https://www.ajobot.com/>
+
 ## Dev version
 
 <https://ajofront.pages.dev/>
